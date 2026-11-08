@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "language": "en",
+  "listen": "127.0.0.1:8766",
+  "ai_service_listen": "127.0.0.1:8765",
+  "active_character": null,
+  "pet": {
+    "visible": true,
+    "x": -1,
+    "y": -1,
+    "scale": 1.0,
+    "output": "",
+    "click_through": false
+  },
+  "open_ui_on_start": false
+}

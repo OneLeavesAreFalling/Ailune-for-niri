@@ -1,0 +1,6 @@
+// Optional cosmetics for Ailune's pet layer surface.
+// Ailune does not need this rule and never edits your Niri config automatically.
+layer-rule {
+    match namespace="^ailune-pet$"
+    shadow { off; }
+}

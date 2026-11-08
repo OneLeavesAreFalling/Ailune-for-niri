@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ailune"
+version = "0.1.0.dev0"
+description = "Ailune — customizable AI desktop companion for Linux"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Ailune contributors" }]
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "httpx>=0.27",
+  "PyQt6>=6.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-anyio>=0.0.0",
+]
+
+[project.scripts]
+ailune-ui = "ailune.ui.__main__:main"
+ailune-service = "ailune.service.__main__:main"
+ailune-pet = "ailune.pet.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ailune"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning:PyQt6.*",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
